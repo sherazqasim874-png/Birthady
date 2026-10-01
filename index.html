@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A romantic birthday surprise and love story experience for my future wife."
+    />
+    <title>Happy Birthday, My Future Wife</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="background-glow glow-1"></div>
+    <div class="background-glow glow-2"></div>
+    <div class="sparkles" aria-hidden="true"></div>
+    <div class="petals" aria-hidden="true"></div>
+
+    <div class="app-shell">
+      <header class="top-bar">
+        <div class="brand">Love Story</div>
+        <nav class="stage-nav" aria-label="Stage navigation" id="stageNav"></nav>
+        <button
+          id="soundToggle"
+          class="icon-button"
+          type="button"
+          aria-label="Toggle sound"
+          title="Toggle sound"
+        >
+          🔊
+        </button>
+      </header>
+
+      <div class="progress-wrap" aria-label="Progress tracker">
+        <div class="progress-meta">
+          <span>Our love journey</span>
+          <strong id="progressText">0/8 stages</strong>
+        </div>
+        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <span id="progressFill"></span>
+        </div>
+      </div>
+
+      <main class="screen-stack" aria-live="polite">
+        <section class="screen active" id="screen-envelope" data-stage="envelope">
+          <div class="envelope-scene">
+            <div class="floating-hearts" aria-hidden="true">
+              <span>💖</span>
+              <span>💗</span>
+              <span>💞</span>
+              <span>💘</span>
+            </div>
+
+            <div class="envelope-wrapper" aria-label="Surprise envelope">
+              <div class="envelope">
+                <div class="envelope-flap"></div>
+                <div class="seal-wrap">
+                  <div class="seal-heart">♥</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="surprise-copy">
+              <p class="eyebrow">A little universe for you</p>
+              <h1>Someone has prepared a little universe just for you...</h1>
+            </div>
+
+            <button id="openEnvelopeBtn" class="primary-button" type="button">
+              Open your surprise.
+            </button>
+          </div>
+        </section>
+
+        <section class="screen" id="screen-welcome" data-stage="welcome">
+          <div class="glass-card welcome-card">
+            <p class="eyebrow">Your birthday adventure</p>
+            <h2 id="welcomeTitle">Happy Birthday, [HER NAME] ❤️</h2>
+            <div class="cake-scene" aria-label="Birthday cake illustration">
+              <div class="cake">
+                <div class="cake-top"></div>
+                <div class="candles">
+                  <span class="candle candle-1"></span>
+                  <span class="candle candle-2"></span>
+                  <span class="candle candle-3"></span>
+                </div>
+                <div class="cake-body"></div>
+                <div class="cake-plate"></div>
+              </div>
+            </div>
+
+            <p id="welcomeIntro" class="romantic-intro">
+              A life with you is my favorite dream, and today I want every second of this birthday to feel as warm, beautiful, and unforgettable as you are.
+            </p>
+
+            <div id="countdownBox" class="countdown-box hidden" aria-live="polite"></div>
+
+            <button id="startAdventureBtn" class="primary-button" type="button">
+              Start the birthday adventure
+            </button>
+          </div>
+        </section>
+
+        <section class="screen" id="screen-heart-game" data-stage="heartGame">
+          <div class="glass-card game-card">
+            <div class="game-header">
+              <div>
+                <p class="eyebrow">Game 1</p>
+                <h2>Find my hearts</h2>
+              </div>
+              <div class="score-pill"><span id="heartProgress">0/7</span></div>
+            </div>
+
+            <div id="heartGameZone" class="heart-game-zone" aria-label="Heart finding game area"></div>
+            <div id="heartHint" class="game-hint">Find all the hidden hearts to uncover the love behind them.</div>
+          </div>
+        </section>
+
+        <section class="screen" id="screen-quiz" data-stage="quizGame">
+          <div class="glass-card quiz-card">
+            <div class="game-header">
+              <div>
+                <p class="eyebrow">Game 2</p>
+                <h2>Love quiz</h2>
+              </div>
+              <div class="score-pill"><span id="quizCounter">1/5</span></div>
+            </div>
+            <div id="quizContainer" class="quiz-container" aria-live="polite"></div>
+          </div>
+        </section>
+
+        <section class="screen" id="screen-gallery" data-stage="memoryGarden">
+          <div class="glass-card gallery-card">
+            <p class="eyebrow">Memory garden</p>
+            <h2>Our favorite memories</h2>
+            <div id="memoryGallery" class="memory-gallery"></div>
+            <button id="continueStoryBtn" class="primary-button" type="button">Continue our story.</button>
+          </div>
+        </section>
+
+        <section class="screen" id="screen-letter" data-stage="letter">
+          <div class="glass-card letter-card">
+            <div class="letter-heart-bg" aria-hidden="true">❤</div>
+            <div class="sealed-letter" id="sealedLetterBox">
+              <div class="seal" aria-hidden="true">♥</div>
+              <button id="openLetterBtn" class="primary-button" type="button">Open my letter.</button>
+            </div>
+
+            <article id="letterText" class="letter-text" aria-live="polite"></article>
+            <button id="finalSurpriseBtn" class="primary-button hidden" type="button">Reveal the final surprise</button>
+          </div>
+        </section>
+
+        <section class="screen" id="screen-final" data-stage="final">
+          <div class="glass-card final-card">
+            <div class="final-cake" aria-label="Birthday cake illustration">
+              <div class="cake big-cake">
+                <div class="cake-top"></div>
+                <div class="candles">
+                  <span class="candle candle-1"></span>
+                  <span class="candle candle-2"></span>
+                  <span class="candle candle-3"></span>
+                </div>
+                <div class="cake-body"></div>
+                <div class="cake-plate"></div>
+              </div>
+            </div>
+
+            <h2>Happy Birthday, My Future Wife!</h2>
+            <p id="finalMessage" class="final-message">
+              If I could make one wish today, it would be to see you happy every single day.
+            </p>
+
+            <button id="oneLastSurpriseBtn" class="primary-button" type="button">One last surprise.</button>
+            <div id="finalReveal" class="final-reveal hidden">
+              <p>
+                You are my favorite dream, my sweetest comfort, and the love I want to build my forever with. May every year bring you more joy, peace, and beautiful memories than the last.
+              </p>
+            </div>
+            <button id="replayExperienceBtn" class="secondary-button" type="button">Replay the love story</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
